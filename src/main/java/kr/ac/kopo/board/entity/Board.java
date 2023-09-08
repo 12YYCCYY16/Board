@@ -29,6 +29,12 @@ public class Board extends BaseEntity{
     @ManyToOne(fetch = FetchType.LAZY)
     private Member writer;//실제 board 테이블에는 writer_email이라는 컬럼이 생성되고 fk키(멤버테이블 email컬럼값만 참조하기위해) 설정
 
+    public void changeTitle(String title) {
+        this.title = title;
+    }
 
+    public void changeContent(String content) {
+        this.content = content;
+    }
 
 }
