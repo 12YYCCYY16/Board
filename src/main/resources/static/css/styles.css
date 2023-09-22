@@ -4595,11 +4595,12 @@ textarea.form-control-lg {
 
 .badge {
   --bs-badge-padding-x: 0.65em;
-  --bs-badge-padding-y: 0.35em;
-  --bs-badge-font-size: 0.75em;
+  --bs-badge-padding-y: 0.65em;
+  --bs-badge-font-size: 1.00em;
   --bs-badge-font-weight: 700;
   --bs-badge-color: #fff;
   --bs-badge-border-radius: 0.375rem;
+  background: #0f5132;
   display: inline-block;
   padding: var(--bs-badge-padding-y) var(--bs-badge-padding-x);
   font-size: var(--bs-badge-font-size);
@@ -4610,6 +4611,7 @@ textarea.form-control-lg {
   white-space: nowrap;
   vertical-align: baseline;
   border-radius: var(--bs-badge-border-radius);
+  margin: 10px;
 }
 .badge:empty {
   display: none;

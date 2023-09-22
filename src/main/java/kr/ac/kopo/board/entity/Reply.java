@@ -18,7 +18,7 @@ public class Reply  extends BaseEntity{
     private String text;
     private String replyer;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private Board board;// board 테이블의 bno컬럼값만 참조하기위해
 
 

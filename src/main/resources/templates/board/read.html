@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <th:block th:replace="~{/layout/basic :: setContent(~{this::content} )}">
     <th:block th:fragment="content">
         <h1 class="mt-4"> Board Read Page </h1>
@@ -29,5 +30,30 @@
         </div>
         <a th:href="@{/board/modify(bno = ${dto.bno}, page=${requestDTO.page},type=${requestDTO.type},keyword=${requestDTO.keyword})}"><button type="button" class="btn btn-info">Modify</button></a>
         <a th:href="@{/board/list(page=${requestDTO.page},type=${requestDTO.type},keyword=${requestDTO.keyword})}"><button type="button" class="btn btn-info">List</button></a>
+        <div>
+            <div class="mt-4">
+                <h5>
+                    <span class="badge badge-secondary replyCount"> Reply Count [[${dto.replyCount}]]</span>
+                </h5>
+            </div>
+            <div class="list-group replyList">
+                <!-- 내용 -->
+            </div>
+        </div>
     </th:block>
 </th:block>
+<script th:inline="javascript">
+    $(document).ready(function() {
+        var bno = [[${dto.bno}]];
+        var listGroup = $(".replyList");
+
+        $(".replyCount").click(function() {
+            $.getJSON('/replies/board/' + bno, function(arr) {
+                console.log(arr);
+            }); // end getJSON
+        }); // end click
+    });
+
+</script>
+
+</html>
