@@ -37,7 +37,7 @@ public class ReplyController {
         replyService.remove(rno);
         return new ResponseEntity<>("success", HttpStatus.OK);
     }
-
+ //3-2 en
     @PutMapping("/{rno}")
     public ResponseEntity<String> modify(@RequestBody ReplyDTO replyDTO) {
         log.info(replyDTO);
